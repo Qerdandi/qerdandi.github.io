@@ -24,7 +24,7 @@ table{
 
 td {
     width: 30%;
-    background-color: rgb(200, 200, 200);
+    background: rgba(200, 200, 200, 1);
     color: black;
     padding: 15px;
     border-radius: 40px;
