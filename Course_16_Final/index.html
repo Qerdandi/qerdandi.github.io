@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <title>
+            Internet Today
+        </title>
+    </head>
+
+    <body>
+
+        <!-- ----------------------------------------LOADING-PAGE-------------------------------------------- -->
+
+        <div id="loadingPage">
+            <img src="images/loading_icon.gif" alt="loading_icon">
+        </div>
+
+        <!-- ----------------------------------------POPUP-------------------------------------------- -->
+
+        <div class="popup" id="popup">
+            <div class="overlay"></div>
+            <div class="content">
+                <button class="close" onclick="closePopup('popup')">&#9587;</button>
+                <h1 id="popupTitle">Are you still there ?</h1>
+                <p id="popupText">There is no need to check if you still there, except to collect personal data about your activity and waste your time if you were active.</p>
+            </div>
+        </div>
+
+        <div class="popup" id="popupCB">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1 id="popupCbTitle">Your opinion is important.</h1>
+                <p id="popupCbText">Do you like the web site?</p>
+                <input type="checkbox" class="checkbox" id="confirmCB">
+                <button class="button" id="confirmPopupCB">Confirm</button>
+            </div>
+        </div>
+
+        <div class="popup" id="captcha">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Are you human ?</h1>
+                <del><p id="randomText"></p></del>
+                <button class="refresh" id="refreshCaptcha">&#8634;</button>
+                <input type="text" id="textField" value="Enter to verify">
+            </div>
+        </div>
+
+        <!-- ----------------------------------------FIXED-TOP-BAR-------------------------------------------- -->
+
+        <div class="top">
+            <div id="cursor"></div>
+
+            <img src="images/loading_icon.gif" alt="loading_icon">
+            <p>ORION</p>
+        </div>
+
+        <!-- ----------------------------------------BODY-PAGE-------------------------------------------- -->
+
+        <div class="grid-container">
+
+            <!-- ----------------------------------------HEADER-------------------------------------------- -->
+            
+            <div class="header">
+                <h3 id="dateTime"></h3>
+                <h1>ORION</h1>
+                <p>Welcome to ORION, the web site where you can buy ideas, projects and needs of all kinds. If you also want to sell your own ideas, don't wait any longer. It's very simple: create your account, set your price and publish your idea. A 100% commission on your selling price is recovered by us. We are an honest company that earns money through the small commissions on your ideas, advertisements and the collect and sale of your personal data to multiple third parties at unbeatable prices</p>
+    
+                <p class="withoutDecoration"><u>Click </u><a onclick="openPopup('popupCB', 'popupCbTitle', 'Your opinion is important.','popupCbText', 'Do you like the web site?')">HERE</a> to get a gift.</p>
+
+                <button class="button" style="float: right;" onclick="openCaptcha()">Get the Gift</button>
+            </div>
+
+            <!-- ----------------------------------------MENU-------------------------------------------- -->
+
+            <div class="menu">
+                
+            </div>
+
+            <!-- ----------------------------------------MAIN-------------------------------------------- -->
+
+            <div class="main" id="main">
+
+                <div class="idea">
+                    <h3>Time Machine</h3>
+                    <p>Mathematical study of the possibility of time travel. Beginning of physical study without experimental evidence.</p>
+                    <p class="price">200 $</p>
+                    <hr>
+                    <p><a onclick="openPopup('popup', 'popupTitle', 'Are you still there ?', 'popupText', 'There is no need to check if you still there, except to collect personal data about your activity and waste your time if you were active.')">More details</a></p>
+                </div>
+
+                <div class="idea">
+                    <h3>Military Exoskeleton</h3>
+                    <p>Feasibility study of a military exoskeleton, elaboration of the functional specifications and study of the conception costs of the prototype and its tests.</p>
+                    <p class="price">1999.99 $</p>
+                    <hr>
+                    <p><a onclick="openCaptcha()">More details</a></p>
+                </div>
+
+                <div class="idea">
+                    <h3>Beer Counter Fridge</h3>
+                    <p>Just an idea that came to me when I was watching a football match.</p>
+                    <p class="price">5 $</p>
+                    <hr>
+                    <p><a href="">More details</a></p>
+                </div>
+
+                <button class="button" id="movingBtn" style="position: relative;">Starts to earn money</button>
+
+            </div>  
+
+            <!-- ----------------------------------------RIGHT-------------------------------------------- -->
+
+            <div class="right">
+
+                <div class="ads" onmouseover="openPopupAds()">
+                    <img src="images/mcdonald.jpg" alt="mcdonald">
+                </div>
+                <div class="ads" onmouseover="openPopupAds()">
+                    <img src="images/coca_cola.jpg" alt="coca_cola">
+                </div>
+                <div class="ads" onmouseover="openPopupAds()">
+                    <img src="images/mars_tour.jpg" alt="mars_tour">
+                </div>
+
+            </div>
+
+            <!-- -------------------------------------COOKIES-POPUP----------------------------------------- -->
+
+            <div id="cookiePopup">
+                <p>Under the pretext of proper operation of the site, you must accept all cookies so that we can collect all sorts of data about you to sell to other companies and offer you more advertising based on your activity.</p>
+                <label>Accept all cookies.</label>
+                <input type="checkbox" style="pointer-events: none;" checked disabled>
+                <label>Only necessary.</label>
+                <input type="checkbox" style="pointer-events: none;" disabled>
+                <label>Decline all cookies.</label>
+                <input type="checkbox" id="noCookies"><br>
+                <br>
+                <button id="confirmCookies">Confirm</button>
+            </div>
+
+        </div>
+
+        <audio id="cursorClick">
+            <source src="audios/rclick-13693.mp3" type="audio/mpeg">
+        </audio>
+                
+        <script src="code.js"></script>
+    </body>
+</html>
