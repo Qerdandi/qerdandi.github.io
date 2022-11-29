@@ -140,6 +140,9 @@ var height = window.innerHeight;
 var translateBtn = false;
 var captchaSize = 5;
 
+var nbOfClick = 0;
+var timeOver = 0;
+
 // -----------------------------------------MOVING-BUTTON-------------------------------------------
 
 var movingBtn = document.getElementById("movingBtn");
@@ -279,6 +282,32 @@ function loadPage(){
 setInterval(function(){
 	document.getElementById("dateTime").textContent = new Date();
 }, 1000);
+
+// -----------------------------------DATA-COLLECT-------------------------------------
+
+document.addEventListener("click", function(){
+	nbOfClick++;
+	document.getElementById("nbOfClickText").textContent = "Number of click: " + nbOfClick;
+});
+
+document.getElementById("timeOverText").onmouseenter = function(){
+	setInterval(incrementTimeOver, 1000);
+}
+
+document.getElementById("timeOverText").onmouseleave = function(){
+	window.clearInterval(incrementTimeOver);
+	console.log("OUT");
+}
+
+function incrementTimeOver(){
+	console.log("ON");
+	timeOver++;
+	document.getElementById("timeOverText").textContent = timeOver + ' s';
+}
+
+document.getElementsByClassName("button").onclick = function(){
+	alert("Click");
+}
 
 // -----------------------------------OTHER-------------------------------------------
 
