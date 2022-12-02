@@ -1,141 +1,4 @@
-/*var canvas = document.getElementById('canvas')
-setUpCanvas();
-var context = canvas.getContext("2d");
-const bkgColor = '#002ae0'
-context.fillStyle = bkgColor;
-context.fillRect(0, 0, canvas.width, canvas.height);
-
-var tokenList = [];
-
-var col = []
-for(let i = 0; i < 7; i++){
-	col.push(false);
-}
-
-const radius = 30;
-const offset = 20;
-const xO =  radius + offset;
-const yO =  radius + offset;
-const freeSpace = 2*radius + offset;
-
-var xPos = xO;
-var yPos = -radius;
-var ySpeed = 10;
-var endTurn = true;
-var yellow = true;
-var rgb;
-
-drawGrid();
-
-function setUpCanvas(){
-	canvas.width = 580;
-	canvas.height = 500;
-}
-
-function drawGrid(){
-	for(let i = 0; i < 7; i++){
-		for(let j = 0; j < 6; j++){
-			drawCircle('rgb(255, 255, 255)', radius, xO + i*freeSpace, yO + j*freeSpace);
-		}
-	}
-
-	for(let j = 0; j < tokenList.length; j++){
-		drawCircle(tokenList[j][0], tokenList[j][1], tokenList[j][2], tokenList[j][3]);
-	}
-}
-
-function setUpValues(i){
-	if(yellow){
-		rgb = 'rgb(255, 255, 0)';
-	}else{
-		rgb ='rgb(255, 0, 0)';
-	}
-
-	xPos = xO + 80*i;
-	yPos = -radius;
-	endTurn = false;
-}
-
-function dropCircle(){
-	if(!endTurn){
-		canvasAniId = requestAnimationFrame(dropCircle);
-	}
-
-	clearCanvas();
-	drawCircle(rgb, radius, xPos, yPos);
-
-	yPos += ySpeed;
-
-	if(yPos == canvas.height - (radius + offset)){
-		console.log("End");
-		endTurn = true;
-		yellow = !yellow;
-
-		var circle = [rgb, radius, xPos, yPos];
-		tokenList.push(circle);
-	}
-
-	for(let i = 0; i < tokenList.length; i++){
-		if(yPos == tokenList[i][3] - (2*radius + offset) && xPos == tokenList[i][2]){ 
-			console.log("End");
-			endTurn = true;
-			yellow = !yellow;
-	
-			var circle = [rgb, radius, xPos, yPos];
-			tokenList.push(circle);
-
-			
-			if(yPos == yO){
-				col[(xPos-xO)/80] = true;
-			}
-		}
-	}
-}
-
-function drawCircle(rgb, radius, xPos, yPos){
-	context.fillStyle = rgb;
-	context.beginPath();
-	context.arc(xPos, yPos, radius, 0, Math.PI * 2);
-	context.fill();
-}
-
-function clearCanvas(){
-	context.fillStyle = bkgColor;
-	context.fillRect(0, 0, canvas.width, canvas.height);
-	drawGrid();
-}
-
-function rand(min, max){ return Math.floor(Math.random() * max+1) + min; }
-
-function changeText(id, text){
-	document.getElementById(id).innerHTML = text; // "document" means that the script affect all HTML file
-}
-
-document.addEventListener('keydown', (event) => {
-	if(event.key.toLowerCase() == 'r'){
-		tokenList = [];
-		
-		for(let i = 0; i < 7; i++){
-			col[i] = false;
-		}		
-		
-		endTurn = true;
-		yellow = true;
-		clearCanvas();
-	}
-}, false);
-
-for (let i = 0; i < 7; i++) {
-	document.getElementById("btn"+(i+1)).onclick = function(){
-		if(endTurn && !col[i]){
-			console.log("Inserted");
-			setUpValues(i);
-			dropCircle();
-		}
-	};
-}*/
-
-var width = window.innerWidth;
+var greenBarW = window.innerWidth;
 var height = window.innerHeight; 
 
 // -----------------------------------------MOVING-BUTTON-------------------------------------------
@@ -144,7 +7,7 @@ var movingBtn = document.getElementById("movingBtn");
 var translateBtn = false;
 
 movingBtn.onmouseover = function(){
-	fleeMouse(movingBtn);
+	fleeMouse(movingBtn); 
 };
 
 function fleeMouse(element) {
@@ -161,6 +24,7 @@ function fleeMouse(element) {
 
 function openPopupAds(){
 	openPopup('popupCB', 'popupCbTitle', 'Ads based on your data', 'popupCbText', 'See more ads of this type ?');
+	document.getElementById("errorSound").play();
 }
 
 // -----------------------------------------POPUP-------------------------------------------
@@ -189,10 +53,6 @@ document.getElementById("confirmPopupCB").onclick = function(){
 }
 
 // ---------------------------------COOKIES-POPUP-------------------------------------------
-
-window.onload = (event) => {
-	document.getElementById("cookiePopup").classList.toggle("active");
-};
 
 /*function openCookies(){
 	document.getElementById("cookiePopup").classList.add("active");
@@ -253,6 +113,13 @@ function resetCaptcha(){
 	document.getElementById("textField").style.color = 'grey';
 }
 
+// ---------------------------------ALERT-------------------------------------------
+
+function openAlert(text){
+	document.getElementById("notificationSound").play();
+	alert(text);
+}
+
 // ---------------------------------CURSOR-------------------------------------------
 
 document.addEventListener("mousemove", function(){
@@ -265,7 +132,7 @@ document.addEventListener("click", function(){
 });
 
 function playAudio() { 
-	document.getElementById("cursorClick").play(); 
+	document.getElementById("cursorSound").play(); 
 }
 
 // ---------------------------------LOADING-PAGE---------------------------------------
@@ -300,6 +167,14 @@ document.addEventListener("click", function(){
 var products = document.getElementsByClassName("product");
 var pdTimeTexts = document.getElementsByClassName("timeOverProduct");
 var timeOver;
+
+window.onload = (event) => {
+	document.getElementById("cookiePopup").classList.toggle("active");
+	
+	for (let i = 0; i < products.length; i++) {
+		pdTimeTexts[i].textContent = products[i].getElementsByTagName("h3")[0].innerHTML + ': 0 s';
+	}
+};
 
 for (let i = 0; i < products.length; i++) {
 	products[i].addEventListener("mouseenter", function(){
@@ -353,6 +228,97 @@ for (let i = 0; i < buttonClasses.length; i++) {
 function lastButtonTime(){
 	var date = new Date();
 	document.getElementById("lastButtonText").textContent = `Last button: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+}
+
+// -----------------------------------------CANVAS-------------------------------------------
+
+var canvas = document.getElementById('canvas')
+var context = canvas.getContext("2d");
+
+var border = 15;
+var loadBkgH = 50;
+var loadBkgW = canvas.width-4*border;
+var loadBarH = 30;
+var loadBarW = canvas.width-6*border;
+
+var counter = 0;
+var drawImage = true;
+
+drawStaticObjects();
+
+function drawStaticObjects(){
+	context.fillStyle = '#ffffff';
+	context.fillRect(0, 0, canvas.width, canvas.height);
+
+	context.strokeStyle = '#848484';
+	context.lineWidth = border;
+	context.strokeRect(border/2, border/2, canvas.width-border, canvas.height-border);
+
+	context.font = "20px system-ui";
+	context.textAlign = 'center';
+	context.fillStyle = '#000000';
+	context.fillText("Installing the virus...", centerX(0), canvas.height/2.4);
+
+	drawDynamicObjects();
+}
+
+function drawDynamicObjects(){
+
+	counter+= 1;
+	if(counter%100 == 0){
+		drawImage = !drawImage;
+	}
+
+	if(drawImage){
+		context.drawImage(document.getElementById("virus"), centerX(140), canvas.height/6.4, 140, 100);
+		context.drawImage(document.getElementById("virus"), centerX(140), canvas.height/1.5, 140, 100);
+	}
+
+	context.fillStyle = '#848484';
+	context.fillRect(centerX(loadBkgW), centerY(loadBkgH), loadBkgW, loadBkgH);
+
+	context.fillStyle = '#e2e2e2';
+	context.fillRect(centerX(loadBarW), centerY(loadBarH), loadBarW, loadBarH);
+}
+
+var canvasAniId = requestAnimationFrame(canvasAnimation);
+
+var greenBarW = 1;
+var greenBarWMax = 70;
+var xInit = 3*border-greenBarW/2;
+var xPos = 3*border-greenBarW/2;
+var yPos = centerY(loadBarH);
+var xSpeed = 1;
+
+function canvasAnimation(){	
+	canvasAniId = requestAnimationFrame(canvasAnimation);
+
+	if(xPos >= canvas.width-3*border-greenBarW){
+		greenBarW--;
+		if(xPos >= canvas.width-3*border){
+			greenBarW = 1
+			xPos = 3*border-greenBarW/2;
+		}
+	}
+
+	if(xPos == xInit && greenBarW < greenBarWMax){	
+		greenBarW++;
+	}else{
+		xPos += xSpeed;
+	}
+
+	drawStaticObjects();
+	
+	context.fillStyle =  `rgb(0, 255, 0)`;
+	context.fillRect(xPos, yPos, greenBarW, loadBarH);
+}
+
+function centerX(width){
+	return canvas.width/2 - width/2;
+}
+
+function centerY(height){
+	return canvas.height/2 - height/2;
 }
 
 // -----------------------------------OTHER-------------------------------------------

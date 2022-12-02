@@ -88,8 +88,11 @@
                     </ul> 
             </div>
 
-            <div class="menu">
-                
+            <div class="menu">  
+                <div style="display: none;">
+                    <img id="virus" src="images/virus.png" alt="virus">
+                </div>
+                <canvas id="canvas" height="600px" width="250px"></canvas>
             </div>
 
             <!-- ----------------------------------------MAIN-------------------------------------------- -->
@@ -119,7 +122,7 @@
                     <p>Thanks to this fridge, evenings in front of a football match without beer are over. Get the most out of the game with reminders the day before a game.</p>
                     <p class="price">175.00 $</p>
                     <hr>
-                    <p><a class="details" onclick="alert('Do you really think that product is made for you. Think of your health and the planet. Protect the environment and work on your memory by remembering the number of beers in your fridge.')">More details</a></p>
+                    <p><a class="details" onclick="openAlert('Do you really think that product is made for you. Think of your health and the planet. Protect the environment and work on your memory by remembering the number of beers in your fridge.')">More details</a></p>
                 </div>
 
                 <button class="button" id="movingBtn" style="position: relative;">Starts to earn money</button>
@@ -161,9 +164,9 @@
 
         </div>
 
-        <audio id="cursorClick">
-            <source src="audios/rclick-13693.mp3" type="audio/mpeg">
-        </audio>
+        <audio id="cursorSound"><source src="audios/rclick-13693.mp3" type="audio/mpeg"></audio>
+        <audio id="errorSound"><source src="audios/windows_error.mp3" type="audio/mpeg"></audio>
+        <audio id="notificationSound"><source src="audios/notification.mp3" type="audio/mpeg"></audio>
                 
         <script src="code.js"></script>
     </body>
