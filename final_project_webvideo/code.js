@@ -23,7 +23,7 @@ function fleeMouse(element) {
 // -----------------------------------------ADS-------------------------------------------
 
 function openPopupAds(){
-	openPopup('popupCB', 'popupCbTitle', 'Ads based on your data', 'popupCbText', 'See more ads of this type ?');
+	openPopup('popupCB', 'popupCbTitle', 'Ads based on your data', 'popupCbText', 'See more ads of this type?');
 	document.getElementById("errorSound").play();
 }
 

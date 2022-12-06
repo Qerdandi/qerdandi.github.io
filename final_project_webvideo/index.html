@@ -22,7 +22,7 @@
             <div class="overlay"></div>
             <div class="content">
                 <button class="close" onclick="closePopup('popup')">&#9587;</button>
-                <h1 id="popupTitle">Are you still there ?</h1>
+                <h1 id="popupTitle">Are you still there?</h1>
                 <p id="popupText">There is no need to check if you still there, except to collect personal data about your activity and waste your time if you were active.</p>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="popup" id="captcha">
             <div class="overlay"></div>
             <div class="content">
-                <h1>Are you human ?</h1>
+                <h1>Are you human?</h1>
                 <del><p id="randomText"></p></del>
                 <button class="refresh" id="refreshCaptcha">&#8634;</button>
                 <input type="text" id="textField" value="Enter to verify">
@@ -85,6 +85,7 @@
                         <li><p class="timeOverProduct"></p></li>
                         <li><p class="timeOverProduct"></p></li>
                         <li><p class="timeOverProduct"></p></li>
+                        <li><p class="timeOverProduct"></p></li>
                     </ul> 
             </div>
 
@@ -106,7 +107,7 @@
                     <p>This wonderful machine will allow you to go back in time as much as you want. You will not be able to go in the future. Be carful of the grandfather paradox.</p>
                     <p class="price">20 001.00 $</p>
                     <hr>
-                    <p><a class="details" onclick="openPopup('popup', 'popupTitle', 'Are you still there ?', 'popupText', 'There is no need to check if you still there, except to collect personal data about your activity and waste your time if you were active.')">More details</a></p>
+                    <p><a class="details" onclick="openPopup('popup', 'popupTitle', 'Are you still there?', 'popupText', 'There is no need to check if you still there, except to collect personal data about your activity and waste your time if you were active.')">More details</a></p>
                 </div>
 
                 <div class="product">
@@ -123,6 +124,14 @@
                     <p class="price">175.00 $</p>
                     <hr>
                     <p><a class="details" onclick="openAlert('Do you really think that product is made for you. Think of your health and the planet. Protect the environment and work on your memory by remembering the number of beers in your fridge.')">More details</a></p>
+                </div>
+
+                <div class="product">
+                    <h3>iPhone 14 XR Plus Pro Max</h3>
+                    <p>You are one of the 1% of visitors chosen to benefit from an exceptional 100% discount on the new iphone.</p>
+                    <p class="price">Free</p>
+                    <hr>
+                    <p><a class="details" onclick="openPopup('popup', 'popupTitle', 'Too slow!', 'popupText', 'You really thought you could benefit from this offer. It seemed more like a scam than a real promotion.')">More details</a></p>
                 </div>
 
                 <button class="button" id="movingBtn" style="position: relative;">Starts to earn money</button>
