@@ -12,11 +12,12 @@ movingBtn.onmouseover = function(){
 
 function fleeMouse(element) {
 	translateBtn = !translateBtn;
+	var margin = 15;
 
 	if(translateBtn){
-		element.style.left = document.getElementById("main").clientWidth - element.clientWidth - 15 + 'px';
+		element.style.left = document.getElementById("main").clientWidth - element.clientWidth - margin + 'px';
 	}else{
-		element.style.left = 0 + 15 + 'px';
+		element.style.left = 0 + margin + 'px';
 	}
 }
 
@@ -54,7 +55,7 @@ document.getElementById("confirmPopupCB").onclick = function(){
 
 // ---------------------------------COOKIES-POPUP-------------------------------------------
 
-/*function openCookies(){
+/*function openCookies(){ // display cookies popup panel
 	document.getElementById("cookiePopup").classList.add("active");
 }*/
 
@@ -137,7 +138,7 @@ function playAudio() {
 
 // ---------------------------------LOADING-PAGE---------------------------------------
 
-/*document.addEventListener("click", function(){
+/*document.addEventListener("click", function(){ // display loading page each time, left click on mouse is done
 	loadPage();
 });*/
 
@@ -196,7 +197,7 @@ for (let i = 0; i < products.length; i++) {
 }
 
 function updateFavorite(){
-	var productTimes = [0, 0, 0];
+	var productTimes = new Array(products.length).fill(0);
 	
 	for (let i = 0; i < pdTimeTexts.length; i++) {
 		pdTimeTexts[i].style.fontWeight = 'normal';
@@ -230,7 +231,7 @@ function lastButtonTime(){
 	document.getElementById("lastButtonText").textContent = `Last button: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 }
 
-// -----------------------------------------CANVAS-------------------------------------------
+// -----------------------------------------VIRUS-INSTALLATION-------------------------------------------
 
 var canvas = document.getElementById('canvas')
 var context = canvas.getContext("2d");
@@ -244,41 +245,44 @@ var loadBarW = canvas.width-6*border;
 var counter = 0;
 var drawImage = true;
 
-drawStaticObjects();
+drawStaticObjects("Installing the virus...");
+drawDynamicImages();
 
-function drawStaticObjects(){
+function drawStaticObjects(text){
+	// Canvas
 	context.fillStyle = '#ffffff';
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
+	// Canvas stroke
 	context.strokeStyle = '#848484';
 	context.lineWidth = border;
 	context.strokeRect(border/2, border/2, canvas.width-border, canvas.height-border);
 
+	// Centered text
 	context.font = "20px system-ui";
 	context.textAlign = 'center';
 	context.fillStyle = '#000000';
-	context.fillText("Installing the virus...", centerX(0), canvas.height/2.4);
+	context.fillText(text, centerX(0), canvas.height/2.4);
 
-	drawDynamicObjects();
+	// Loading bar stroke
+	context.fillStyle = '#848484';
+	context.fillRect(centerX(loadBkgW), centerY(loadBkgH), loadBkgW, loadBkgH);
+
+	// Loading bar background
+	context.fillStyle = '#e2e2e2';
+	context.fillRect(centerX(loadBarW), centerY(loadBarH), loadBarW, loadBarH);
 }
 
-function drawDynamicObjects(){
-
+function drawDynamicImages(){
 	counter+= 1;
 	if(counter%100 == 0){
 		drawImage = !drawImage;
 	}
 
 	if(drawImage){
-		context.drawImage(document.getElementById("virus"), centerX(140), canvas.height/6.4, 140, 100);
-		context.drawImage(document.getElementById("virus"), centerX(140), canvas.height/1.5, 140, 100);
+		context.drawImage(document.getElementById("virus_red"), centerX(140), canvas.height/6.4, 140, 100);
+		context.drawImage(document.getElementById("virus_red"), centerX(140), canvas.height/1.45, 140, 100);
 	}
-
-	context.fillStyle = '#848484';
-	context.fillRect(centerX(loadBkgW), centerY(loadBkgH), loadBkgW, loadBkgH);
-
-	context.fillStyle = '#e2e2e2';
-	context.fillRect(centerX(loadBarW), centerY(loadBarH), loadBarW, loadBarH);
 }
 
 var canvasAniId = requestAnimationFrame(canvasAnimation);
@@ -307,10 +311,22 @@ function canvasAnimation(){
 		xPos += xSpeed;
 	}
 
-	drawStaticObjects();
+	drawStaticObjects("Installing the virus...");
+	drawDynamicImages();
 	
-	context.fillStyle =  `rgb(0, 255, 0)`;
+	context.fillStyle =  `rgb(255, 0, 0)`;
 	context.fillRect(xPos, yPos, greenBarW, loadBarH);
+}
+
+document.getElementById('virusButton').onclick = function() {
+	cancelAnimationFrame(canvasAniId);
+
+	drawStaticObjects('Successfully installed!')
+	context.drawImage(document.getElementById("virus_green"), centerX(140), canvas.height/6.4, 140, 100);
+	context.drawImage(document.getElementById("virus_green"), centerX(140), canvas.height/1.45, 140, 100);
+
+	context.fillStyle = `rgb(0, 255, 0)`;
+	context.fillRect(centerX(loadBarW), centerY(loadBarH), loadBarW, loadBarH);
 }
 
 function centerX(width){
@@ -322,5 +338,11 @@ function centerY(height){
 }
 
 // -----------------------------------OTHER-------------------------------------------
+
+function goToHome(){
+	window.location.href = "https://home.konkuk.ac.kr/~jyku/finalGallery2022.html";
+}
+
+setTimeout(goToHome, 1000*60*10);
 
 function print(text){ console.log(text); }
