@@ -39,16 +39,17 @@ div#main img {
     border-radius: 60px;
 }
 
-div#main table{
-    table-layout: fixed;
+div#main .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
     background-color: white;
-    width: 100%;
-    border-spacing: 20px;
+    padding: 20px;
 }
-
-div#main td {
-    width: 25%;
-    background: rgba(200, 200, 200, 1);
+  
+div#main .grid-item {
+    background-color: rgba(200, 200, 200, 1);
+    border-radius: 60px;
     color: black;
     padding: 15px;
     border-radius: 60px;
