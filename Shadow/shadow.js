@@ -16,14 +16,16 @@ document.onkeydown = (e) => {
 };
 
 function error() {
-    console.warn('In the shadow: https://cybertorii.github.io/Portfolio/index')
+    randomIndex = getRandomInt(99)
     for (let i = 0; i < 100; i++) {
-        if (i%2 === 0) {
-            console.error('Error: 404 Not Found')
-        }else{
-            console.error('Error: Corrupt Files')
+        if(i != randomIndex){
+            console.warn(`In the shadow ${i}: https://cybertorii.github.io/Shadow/shadow`)
+        } else{
+            console.warn(`In the shadow ${i}: https://cybertorii.github.io/Portfolio/index`)
         }
     }  
 }
+
+function getRandomInt(max) { return Math.floor(Math.random() * max); }
 
 error()
