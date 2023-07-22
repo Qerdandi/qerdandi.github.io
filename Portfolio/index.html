@@ -10,289 +10,234 @@
     <body>
         <div id="header">
             <h1 id="section">CyberTorii's Portfolio</h1>
-            <p id="introduction">I am a general engineering student who has a passion for game development since childhood. I started programming in 2017 with Arduino, mode creation on Roblox as well as a 3 hour per week training on blender and Unity 3d, during a school year. I really started game development in 2019 with my first mobile game. Since this training, I learned all aspects of game development by myself. A majority of projects below and all assets that compose them are the result of a personal work. You can click on some application icon to see a trailer.</p>
+            <p class="introduction">I am a general engineering student who has a passion for game development since childhood. I started programming in 2017 with Arduino, mode creation on Roblox as well as a 3 hour per week training on blender and Unity 3d, during a school year. I really started game development in 2019 with my first mobile game. Since this training, I learned all aspects of game development by myself. A majority of projects below and all assets that compose them are the result of a personal work. You can click on application icon to get more details.</p>
         </div>
     <!-- ___________________________________________________________________________________________ -->
-        <div id="main">
+        <div id="showreel">
             <h1 id="section">Showreel</h1>
             <video width="400" controls>
                 <source src="images/Game Dev Showreel 2020-22.mp4" type="video/mp4">
                 Your browser does not support HTML video.
             </video>
-
-            <h1 id="section">Development</h1>
+        </div>
+    <!-- ___________________________________________________________________________________________ -->
+        <div id="projects">
+            <h1 id="section">Projects</h1>
             <div class="grid-container">
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Cinema 5D -->
+                <div class="image-project">
                     <img src="images/Rootual_Icon.png" alt="Rootual_Icon">
-                    <h1 id="title">Rootual</h1>
-                    <hr>
-                    <p id="description">Since time immemorial, the rainforest has been guarded by a protective spirit, watching over the wonders of nature. However, the forest has been disturbed by a gatherer seeking food for their tribe. The protective spirit cannot remain silent in the face of this intrusion, and a confrontation begins.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: PC<br>
-                        > Genre: Survival horror<br>
-                        > Source code: <a id="link" target="_blank" href="https://altaezio.itch.io/rootual">itch.io</a>
-                    </p>
-                    <hr>
-                    <p id="date">02/2023 - In development</p>
-                </div>
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Slide Arena -->
-                    <a target="_blank" href="https://youtu.be/d_oJrXqCORU">
-                        <img src="images/Slide_Arena_Icon.jpg" alt="project_image">
+                    <a target="_blank" href="https://altaezio.itch.io/rootual">
+                        <div class="overlay">
+                            <h1>Rootual</h1>
+                            <p class="type">Survival horror - Unity C#</p>
+                            <p>02/23 - 04/23</p>
+                        </div>
                     </a>
-                    <h1 id="title">Slide Arena</h1>
-                    <hr>
-                    <p id="description">For my second mobile game and my third project, the objective was to make use of my knowledge in 3d modeling, mobile game optimization as well as enemy spawn management and skin store creation. I also tried to respect a graphic charter.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: Android mobile<br>
-                        > Genre: Arcade<br>
-                        > Release: <a id="link" target="_blank" href="https://cybertorii.itch.io/slide-arena">itch.io</a>, <a id="link" target="_blank" href="https://play.google.com/store/apps/details?id=com.CyberTorii.SlideArena">Play Store</a>
-                    </p>
-                    <hr>
-                    <p id="date">04/2020 - 09/2020</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Cinema 5D -->
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Slide_Arena_Icon.jpg" alt="Slide_Arena_Icon">
+                    <a target="_blank" href="https://cybertorii.itch.io/slide-arena">
+                        <div class="overlay">
+                            <h1>Slide Arena</h1>
+                            <p class="type">Arcade - Unity C#</p>
+                            <p>04/20 - 09/20</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
                     <img src="images/Cinema_5D_Icon.png" alt="Cinema_5D_Icon">
-                    <h1 id="title">Cinema 5D</h1>
-                    <hr>
-                    <p id="description">This project, coded during an international semester in South Korea, is a VR game. It is presented in the form of a cinema where you can change between 2 movies: the first one paying tribute to the first movie made in history. The second one is a remake of the horror game Flee adapted for VR.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: PC<br>
-                        > Genre: Survival horror VR<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/Mini-projects/releases/tag/V.2.09.12.22">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">08/2022 - 12/2022</p>
-                </div>
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - FLEE -->
-                    <a target="_blank" href="https://youtu.be/4gkywrKIdNM">
-                        <img src="images/FLEE_Icon.jpg" alt="project_image">
+                    <a target="_blank" href="https://github.com/CyberTorii/Mini-projects/releases/tag/V.2.09.12.22">
+                        <div class="overlay">
+                            <h1>Cinema 5D</h1>
+                            <p class="type">Horror VR - Unity C#</p>
+                            <p>08/22 - 12/22</p>
+                        </div>
                     </a>
-                    <h1 id="title">FLEE</h1>
-                    <hr>
-                    <p id="description">This project is a rework of my first game Space Escape developed in 2017. The objective of this rework was to optimize the existing code, make textures and animations more pleasant and a more varied gameplay with a random spawn of all elements.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: PC<br>
-                        > Genre: Survival horror<br>
-                        > Release: <a id="link" target="_blank" href="https://cybertorii.itch.io/flee">itch.io</a>
-                    </p>
-                    <hr>
-                    <p id="date">06/2021 - 08/2021</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Internet Vision -->
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/FLEE_Icon.jpg" alt="FLEE_Icon">
+                    <a target="_blank" href="https://cybertorii.itch.io/flee">
+                        <div class="overlay">
+                            <h1>FLEE</h1>
+                            <p class="type">Survival horror - Unity C#</p>
+                            <p>06/21 - 08/21</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
                     <img src="images/final_project_webvideo_icon.png" alt="final_project_webvideo_icon">
-                    <h1 id="title">Internet Vision</h1>
-                    <hr>
-                    <p id="description">Internet Vision is a website that illustrates a personal criticism of internet. Many elements have for goal to make people consume products, to waste their time or collect data. This is possible by the diffusion of advertisements, pop-ups and the presence of cookies on websites.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: VSCode - HTML/CSS/Js<br>
-                        > Platform: PC<br>
-                        > Genre: Web Site<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/cybertorii.github.io/tree/main/final_project_webvideo">Github</a>, <a id="link" target="_blank" href="https://cybertorii.github.io/final_project_webvideo/index">Launch</a>
-                    </p>
-                    <hr>
-                    <p id="date">08/2022 - 12/2022</p>
-                </div>
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Pill Dispenser-->
-                    <img src="images/Pill_Dispenser_Icon.jpg" alt="project_image">
-                    <h1 id="title">Pill Dispenser</h1>
-                    <hr>
-                    <p id="description">As part of a school project, our goal was to design a programmable pill dispenser. An application was developed on Unity in C# in order to communicate with the pill dispenser running under Arduino. It allows to track some data and set up the pill dispenser.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C# and Arduino<br>
-                        > Platform: PC<br>
-                        > Genre: Health<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/Pill-Dispenser">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">01/2022 - 05/2022</p>
-                </div>
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column My Game Companion -->
-                    <img src="images/My_Game_Compnion_Icon.jpg" alt="project_image">
-                    <h1 id="title">My Games Companion</h1>
-                    <hr>
-                    <p id="description">As a Dead by Daylight fan, I wanted to be able to save my builds because it was not possible in the game. I developed an application that allows to save builds, create random builds according to player role and display perks images from a json database.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: PC<br>
-                        > Genre: Companion<br>
-                        > Source code: <a id="link" href="https://github.com/CyberTorii/My-Game-Companion" target="_blank">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">07/2021 - 01/2022</p>
-                </div>
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Color Back -->
-                    <img src="images/Color_Back_Icon.jpg" alt="project_image">
-                    <h1 id="title">Color Back</h1>
-                    <hr>
-                    <p id="description">It's a training project to learn how to manipulate the 2D mechanics in Unity including the tilemap tool and how to use post processing through scripts. It was also the opportunity to start writing a game design document.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Unity 3D - C#<br>
-                        > Platform: PC<br>
-                        > Genre: Platform<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/Color-Back">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">01/2022 - On break</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column Hacking Point -->
-                    <img src="images/Hacking_Point_Icon.jpg" alt="project_image">
-                    <h1 id="title">Hacking Point</h1>
-                    <hr>
-                    <p id="description">For my first project in python, I decided to code the breach protocol hacking minigame from Cyberpunk 2077. This project allowed me to get to know the python syntax, lists that can contain different types variables and pygame library to create graphical interfaces.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: VSCode - Python<br>
-                        > Platform: PC<br>
-                        > Genre: Arcade<br>
-                        > Source code: <a id="link" href="https://github.com/CyberTorii/Hacking-Point-Minigame" target="_blank">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">05/2022 - 07/2022</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Pac-Man -->
-                    <img src="images/Pac_Man_Icon.jpg" alt="project_image">
-                    <h1 id="title">PACMAN 2 PLAYERS</h1>
-                    <hr>
-                    <p id="description">It’s as part of a school project (in duo) of 2nd year of engineering school that we programmed a Pac-Man playable with 2 players on a same computer. The objective was to use animations on JavaFx. We also made some changes to the classic gameplay.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Intellij - JavaFx<br>
-                        > Platform: PC<br>
-                        > Genre: Arcade<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/PACMAN-2-PLAYERS">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">02/2021 - 05/2021</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - AHOME -->
-                    <img src="images/AHOME_Icon.jpg" alt="project_image">
-                    <h1 id="title">AHOME</h1>
-                    <hr>
-                    <p id="description">It’s as part of a school project (in duo) of 2nd year of engineering school that we started programming an horror, action and survival game in a text version in the terminal. We were also inspired by the gameplay of the horror game Dead by Daylight.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Intellij - Java<br>
-                        > Platform: PC<br>
-                        > Genre: Survival<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/AHOME">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">10/2020 - 12/2020</p>
-                </div> 
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Quiz of what you want-->
-                    <img src="images/Quiz_Icon.jpg" alt="project_image">
-                    <h1 id="title">Quiz of what you want</h1>
-                    <hr>
-                    <p id="description">This game is a personalized quiz developed in “speed run” over 48 hours. A friend wanted to make a quiz about world flags and I wanted to learn my Japanese alphabet so we developed this game. Questions are in image format and answers in the textfield format.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: Intellij - JavaFx<br>
-                        > Platform: PC<br>
-                        > Genre: Quiz<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/Quiz-of-what-you-want">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">04/2021</p>
-                </div> 
-
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Amadeus -->
-                    <img src="images/Mini_Projects.png" alt="mini_projects">
-                    <h1 id="title">Mini Projects</h1>
-                    <hr>
-                    <p id="description">Here's a set of small projects developed for testing or as learning challenges. They can be designed for PC or smartphones. They use different programming languages. Some project:</p>
-                    <ul>
-                        <li>Skill Tree</li>
-                        <li>Message for Myself</li>
-                        <li>Mysticard</li>
-                    </ul>
-                    <hr>
-                    <p id="details">
-                        > Support: All<br>
-                        > Platform: PC - Android<br>
-                        > Genre: All<br>
-                        > Source code: <a id="link" target="_blank" href="https://github.com/CyberTorii/Mini-projects">Github</a>
-                    </p>
-                    <hr>
-                    <p id="date">N/A</p>
-                </div>
-
-<!-- ___________________________________________________________________________________________ -->
-                <div class="grid-item"> <!-- tag for a column - Amadeus -->
-                    <a download="Amadeus_project_details.jpg" href="images/Amadeus.jpg">
-                        <img src="images/Amadeus.jpg" alt="project_image">
+                    <a target="_blank" href="https://cybertorii.github.io/final_project_webvideo/index">
+                        <div class="overlay">
+                            <h1>Internet Vision</h1>
+                            <p class="type">Parodic website - HTML/CSS/Js</p>
+                            <p>08/22 - 12/22</p>
+                        </div>
                     </a>
-                    <h1 id="title">Amadeus</h1>
-                    <hr>
-                    <p id="description">Amadeus project is an artificial intelligence coded in python. The main goal of this project is to recreate “Amadeus”, the artificial intelligence of Steins;Gate 0. It touches three fields of application : robotic, games and health described on the image.</p>
-                    <hr>
-                    <p id="details">
-                        > Support: VSCode - Python<br>
-                        > Platform: PC<br>
-                        > Genre: AI<br>
-                        > Source code: N/A
-                    </p>
-                    <hr>
-                    <p id="date">N/A</p>
-                </div> 
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Pill_Dispenser_Icon.jpg" alt="Pill_Dispenser_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/Pill-Dispenser">
+                        <div class="overlay">
+                            <h1>Pill Dispenser</h1>
+                            <p class="type">Health - Arduino & Unity C#</p>
+                            <p>01/22 - 05/22</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/My_Game_Compnion_Icon.jpg" alt="My_Game_Compnion_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/My-Game-Companion">
+                        <div class="overlay">
+                            <h1>My Games Companion</h1>
+                            <p class="type">Companion - Unity C#</p>
+                            <p>07/21 - 01/22</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Color_Back_Icon.jpg" alt="Color_Back_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/Color-Back">
+                        <div class="overlay">
+                            <h1>Color Back</h1>
+                            <p class="type">Platformer - Unity C#</p>
+                            <p>01/22 - Break</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Hacking_Point_Icon.jpg" alt="Hacking_Point_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/Hacking-Point-Minigame">
+                        <div class="overlay">
+                            <h1>Hacking Point</h1>
+                            <p class="type">Arcade - Python</p>
+                            <p>05/22 - 07/22</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Pac_Man_Icon.jpg" alt="Pac_Man_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/PACMAN-2-PLAYERS">
+                        <div class="overlay">
+                            <h1>PACMAN 2 PLAYERS</h1>
+                            <p class="type">Arcade - JavaFx</p>
+                            <p>02/21 - 05/21</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/AHOME_Icon.jpg" alt="AHOME_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/AHOME">
+                        <div class="overlay">
+                            <h1>AHOME</h1>
+                            <p class="type">Survival - Java</p>
+                            <p>10/20 - 12/20</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Quiz_Icon.jpg" alt="Quiz_Icon">
+                    <a target="_blank" href="https://github.com/CyberTorii/Quiz-of-what-you-want">
+                        <div class="overlay">
+                            <h1>Quiz of what you want</h1>
+                            <p class="type">Quiz - JavaFx</p>
+                            <p>04/21</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Mini_Projects.png" alt="Mini_Projects">
+                    <a target="_blank" href="https://github.com/CyberTorii/Mini-projects">
+                        <div class="overlay">
+                            <h1>Mini Projects</h1>
+                        </div>
+                    </a>
+                </div>
+                <!-- ___________________________________________________________________________________________ -->
+                <div class="image-project">
+                    <img src="images/Amadeus.jpg" alt="Amadeus">
+                    <a download="Amadeus_project_details.jpg" href="images/Amadeus.jpg">
+                        <div class="overlay">
+                            <h1>Amadeus</h1>
+                            <p class="type">AI - Python</p>
+                        </div>
+                    </a>
+                </div>  
             </div>
         </div>
     <!-- ___________________________________________________________________________________________ -->
-    <h1 id="section">UI/UX Design</h1>
-    <div class="pdf"><iframe src="other/Smart Trip.pdf" width="80%" height="500px"></iframe></div>
-    <!-- ___________________________________________________________________________________________ -->
-        <h1 id="section">3D Modeling</h1>
-        <img id="modeling" src="images/Blender_table_creation.png" alt="blender_table_creation">
-        
-        <div id="footer">
+        <div id="tools">
             <h1 id="section">Softwares used</h1>
-            <p id="section">
-                > Unity 3D - Video games<br>
-                > VS Code - C#, Python, HTML, CSS & JavaScript<br>
-                > Intellij IDEA - Java & Flutter (Dart)<br>
-                > blender - 3D modelling and animations<br>
-                > Krita - 2D design and animations<br>
-                > Figma - UI Design<br><br>
-            </p>
-
-            <div id="row">
-                <a id="link" target="_blank" href="https://play.google.com/store/apps/dev?id=4748174806962614888&hl=fr&gl=US">
-                    <img src="images/google-play.479x512.png" alt="google-play">
-                </a>
-                <a id="link" target="_blank" href="https://cybertorii.itch.io/">
-                    <img src="images/itch-io.512x512.png" alt="itch-io">
-                </a>
-                <a id="link" target="_blank" href="https://www.youtube.com/channel/UCCHZRtEp3Ac9402OL-5KhLg">
-                    <img src="images/youtube.512x512.png" alt="YouTube">
-                </a>
-                <a id="link" target="_blank" href="https://github.com/CyberTorii">
-                    <img src="images/github.800x826.png" alt="github">
-                </a>
-                <br><br>
+            <div class="grid-container">
+                <div>
+                    <img src="images/unity.png" alt="unity">
+                    <p>Unity 3D</p>
+                </div>
+                <div>
+                    <img src="images/vscode.png" alt="vscode">
+                    <p>VS Code</p>
+                </div>
+                <div>
+                    <img src="images/blender3d.png" alt="blender">
+                    <p>Blender</p>
+                </div>
+                <div>
+                    <img src="images/krita.png" alt="krita">
+                    <p>Krita</p>
+                </div>
+                <div>
+                    <img src="images/figma.png" alt="figma">
+                    <p>Figma</p>
+                </div>
+            </div>
+        </div>
+    <!-- ___________________________________________________________________________________________ -->
+        <div id="design">
+            <h1 id="section">UI/UX Design</h1>
+            <div class="pdf"><iframe src="other/Smart Trip.pdf" width="80%" height="500px"></iframe></div>
+            
+            <h1 id="section">3D Modeling</h1>
+            <img src="images/Blender_table_creation.png" alt="blender_table_creation">
+        </div>
+    <!-- ___________________________________________________________________________________________ -->  
+        <div id="footer">
+            <h1 id="section">Links</h1>
+            <div class="grid-container">
+                <div>
+                    <a class="link" target="_blank" href="https://play.google.com/store/apps/dev?id=4748174806962614888&hl=fr&gl=US">
+                        <img src="images/google-play.479x512.png" alt="google-play">
+                    </a>
+                    <p>Play Store</p>
+                </div>
+                <div>
+                    <a class="link" target="_blank" href="https://cybertorii.itch.io/">
+                        <img src="images/itch-io.512x512.png" alt="itch-io">
+                    </a>
+                    <p>itch.io</p>
+                </div>
+                <div>
+                    <a class="link" target="_blank" href="https://www.youtube.com/channel/UCCHZRtEp3Ac9402OL-5KhLg">
+                        <img src="images/youtube.512x512.png" alt="YouTube">
+                    </a>
+                    <p>YouTube</p>
+                </div>
+                <div>
+                    <a class="link" target="_blank" href="https://github.com/CyberTorii">
+                        <img src="images/github.800x826.png" alt="github">
+                    </a>
+                    <p>GitHub</p>
+                </div>
             </div>
         </div>
     </body>

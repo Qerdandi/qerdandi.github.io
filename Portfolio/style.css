@@ -8,132 +8,186 @@
     src: url('other/Poppins-Bold.ttf');
 }
 
+:root {
+    --bg-color: rgb(15, 15, 15, 1);
+    --dark-text-color: rgb(0, 0, 0);
+    --light-text-color: rgb(220, 220, 220);
+    --accent-color: rgba(255, 222, 0, 1); /* rgba(255, 123, 0, 1) */
+    --overlay-color: rgba(255, 222, 0, 0.85); /* rgba(255, 123, 0, 1) */
+}
+
 body{
     font-family: poppins;
-    color: rgb(200, 200, 200);
-    background-color: white;
+    color: var(--light-text-color);
+    background-color: var(--bg-color);
     margin: 0px;
-}
-
-h2 {
-    color: #ac3232; 
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 0px;
-}
-
-video {
-    display: block;
-    margin: 20px auto 20px auto;
-    height: 480px;
-    width: auto;
-}
-
-.pdf{
-    margin: 20px auto 20px auto;
-    text-align: center;
-}
-
-div#main img {
-    width: 100%;
-    border-radius: 60px;
-}
-
-div#main .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px 20px;
-    background-color: white;
-    padding: 20px;
-}
-  
-div#main .grid-item {
-    background-color: rgba(200, 200, 200, 1);
-    border-radius: 60px;
-    color: black;
-    padding: 15px;
-    border-radius: 60px;
-    vertical-align: top;
-}
-
-div#main hr {
-    height:0px;
-    border-radius: 2px;
-    color: #ac3232;
-    border: 2px solid;
-    width: 90%;
-}
-
-div#row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-div#row {
-    background-color: black;
-    margin-left: auto;
-    text-align: center;
-}
-
-div#row img {
-    height: 45px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-div#row #link {
-    text-decoration: none;
 }
 
 #section {
-    background-color: black;
     text-align: center;
     margin: 0;
-    padding: 5px;
+    padding-bottom: 10px;
 }
 
-#introduction {
-    background-color: black;
+.grid-container {
+    display: grid;
+    gap: 20px 20px;
+    justify-content: center; 
+}
+
+/* ----------------- HEADER ----------------- */
+
+div#header {
+    background-color: var(--accent-color);
+    color: var(--dark-text-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div#header .introduction {
     margin: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: justify;
 }
 
-#title {
-    font-family: poppins-bold;
-    text-align: center;
-    color: #ac3232;
+/* ----------------- SHOWREEL ----------------- */
+
+div#showreel {
+    padding-top: 20px;
+    padding-bottom: 20px;  
 }
 
-#description {
-    text-align: justify;
-    font-size: 18px;
-}
-
-#details {
-    text-align: left;
-    font-size: 18px;
-}
-
-#date {
-    text-align: center;
-    font-size: 18px;
-}
-
-#modeling {
-    border-radius: 0px;
-    margin: 20px auto 20px auto;
+div#showreel video {
     display: block;
-    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 480px;
+    width: auto;
+    border: 1px solid var(--light-text-color);
 }
 
-#link {
-    color: #ac3232;
-    text-decoration: none;
+/* ----------------- PROJECTS ----------------- */
+
+div#projects {
+    padding-bottom: 40px;  
 }
 
-#link:hover {
-    text-decoration: underline;
+div#projects .grid-container {
+    grid-template-columns: repeat(4, 20%);
+}
+
+div#projects .image-project {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+  
+div#projects .image-project img {
+    width: 100%;
+    height: 100%;
+}
+  
+div#projects .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div#projects .image-project:hover .overlay {
+    opacity: 1;
+}
+
+div#projects .overlay h1, .overlay p {
+    color: var(--dark-text-color);
+    text-align: center;
+    margin: 5px 0 5px 0;
+    padding: 0;
+}
+
+div#projects .overlay h1 {  
+    font-size: 2vw;
+}
+
+div#projects .overlay p {
+    font-size: 1.2vw;
+}
+
+/* ----------------- TOOLS ----------------- */
+
+div#tools {
+    color: var(--dark-text-color);
+    background-color: var(--accent-color);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+div#tools .grid-container {
+    grid-template-columns: repeat(5, 10%);
+    align-items: center;
+}
+
+div#tools img {
+    height: 45px;
+    margin: 10px auto 10px auto;
+    display: flex;
+}
+
+div#tools p{
+    text-align: center;
+    margin: 0;
+}
+
+/* ----------------- DESIGN ----------------- */
+
+div#design {
+    padding-top: 20px;
+    padding-bottom: 20px;   
+}
+
+div#design .pdf {
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+div#design img {
+    border-radius: 0px;
+    margin: 0 auto 20px auto;
+    display: block;
+    width: 80%;
+}
+
+/* ----------------- FOOTER ----------------- */
+
+div#footer {
+    color: var(--dark-text-color);
+    background-color: var(--accent-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div#footer .grid-container {
+    grid-template-columns: repeat(4, 8%);
+    align-items: center;
+}
+
+div#footer img {
+    height: 45px;
+    margin: 10px auto 10px auto;
+    display: flex;
+}
+
+div#footer p{
+    text-align: center;
+    margin: 0;
 }
