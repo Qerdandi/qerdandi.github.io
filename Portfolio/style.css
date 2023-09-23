@@ -9,7 +9,7 @@
 }
 
 :root {
-    --bg-color: rgb(15, 15, 15, 1);
+    --bg-color: #22272E; /* rgb(15, 15, 15, 1) */
     --dark-text-color: rgb(0, 0, 0);
     --light-text-color: rgb(220, 220, 220);
     --accent-color: rgba(255, 222, 0, 1); /* rgba(255, 123, 0, 1) */
@@ -62,8 +62,8 @@ div#showreel video {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    height: 480px;
-    width: auto;
+    width: 80%;
+    border-radius: 15px;
     border: 1px solid var(--light-text-color);
 }
 
@@ -77,24 +77,21 @@ div#projects .grid-container {
     grid-template-columns: repeat(4, 20%);
 }
 
-div#projects .image-project {
-    position: relative;
-    display: inline-block;
+div#projects .image-project, div#projects .image-project img, div#projects .overlay {
+    border-radius: 15px;
     width: 100%;
     height: 100%;
 }
-  
-div#projects .image-project img {
-    width: 100%;
-    height: 100%;
+
+div#projects .image-project {
+    display: inline-block;
+    position: relative;
 }
   
 div#projects .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-color: var(--overlay-color);
     display: flex;
     flex-direction: column;
@@ -130,6 +127,7 @@ div#tools {
     background-color: var(--accent-color);
     padding-top: 25px;
     padding-bottom: 25px;
+    text-align: center;
 }
 
 div#tools .grid-container {
@@ -148,6 +146,26 @@ div#tools p{
     margin: 0;
 }
 
+button {
+    height: 2.5em; /* 40dp / 16 = 2.5em */
+    text-align: center;
+    font-size: 16px; /* 18dp / 16 = 0.9em */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-width: 0;
+    width: auto;
+    margin: 20px 0 0 0;
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 3em; /* 48dp / 16 = 3em */
+    padding: 0 0.75em; /* 12dp / 16 = 0.75em */
+    text-decoration: underline;
+}
+
+div#more-tools, div#more-lang {
+    margin-top: 20px;
+}
+
 /* ----------------- DESIGN ----------------- */
 
 div#design {
@@ -160,11 +178,16 @@ div#design .pdf {
     text-align: center;
 }
 
+div#design iframe {
+    border-radius: 15px;
+}
+
 div#design img {
     border-radius: 0px;
     margin: 0 auto 20px auto;
     display: block;
     width: 80%;
+    border-radius: 15px;
 }
 
 /* ----------------- FOOTER ----------------- */
