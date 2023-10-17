@@ -1,5 +1,5 @@
 ## Privacy policy
-This policy describes the privacy policy of applications offered by Take Up Tech, which means, how information and data are processed for the proper functioning of applications.
+This policy describes the privacy policy of applications offered by CyberTorii, which means, how information and data are processed for the proper functioning of applications.
 ### French version :
 Toutes les applications développées par Take Up Tech, ne collectent et ne conservent aucune donnée personnelle des utilisateurs. Elles ne traquent pas non plus vos actions et les seules autorisations demandées par les applications sont uniquement nécessaires à leur bon fonctionnement. Les données des applications sont sauvegardées localement et nous n'avons aucun accès à ces dernières. 
 ### English version :
