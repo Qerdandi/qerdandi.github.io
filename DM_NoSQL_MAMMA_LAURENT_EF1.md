@@ -1,4 +1,4 @@
-> Author: Quentin MAMMA | Tom LAURENT (EF1)
+> Auteurs: Quentin MAMMA | Tom LAURENT (EF1)
 
 # Couchbase - Devoir Maison (DM)
 
