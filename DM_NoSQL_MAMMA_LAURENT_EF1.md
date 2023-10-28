@@ -1,20 +1,24 @@
 > Author: Quentin MAMMA | Tom LAURENT (EF1)
 
-# DM NoSQL
+# Couchbase - Devoir Maison (DM)
 
 ## Pourcentage de participation
+
+MAMMA Quentin : `50 %`
+
+LAURENT Tom : `50 %`
 
 ## Requêtes
 
 ### 1.
-#### a) Obtenir toutes les informations sur les livres. (cf. attribut type de valeur Livre)
-**Query:**
+### a) Obtenir toutes les informations sur les livres. (cf. attribut type de valeur Livre)
+**Query SQL++ :**
 ```
 SELECT * 
 FROM ouvrages 
 WHERE type = "Livre";
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -71,20 +75,21 @@ WHERE type = "Livre";
       "volume": "165"
     }
   }
+  ...
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 11 074
 
-#### b) Obtenir le titre, l’année et les auteurs des 5 premiers livres.
-**Query:**
+### b) Obtenir le titre, l’année et les auteurs des 5 premiers livres.
+**Query SQL++ :**
 ```
 SELECT titre, annee, auteurs 
 FROM ouvrages 
 WHERE type = "Livre"
 LIMIT 5;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -127,18 +132,18 @@ LIMIT 5;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 5
 
-#### c) Obtenir les titres et les identifiants (id) des 5 premiers livres.
-**Query:**
+### c) Obtenir les titres et les identifiants (id) des 5 premiers livres.
+**Query SQL++ :**
 ```
 SELECT META().id, titre 
 FROM ouvrages 
 WHERE type = "Livre"
 LIMIT 5;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -163,18 +168,18 @@ LIMIT 5;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 5
 
-#### d) Obtenir toutes les informations, y compris les ids, sur les 5 premiers livres.
-**Query:**
+### d) Obtenir toutes les informations, y compris les ids, sur les 5 premiers livres.
+**Query SQL++ :**
 ```
 SELECT META().id, ouvrages.* 
 FROM ouvrages 
 WHERE type = "Livre"
 LIMIT 5;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -264,18 +269,18 @@ LIMIT 5;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 5
 
 ### 2.
-#### a) Obtenir tous les livres en 2013. On affichera les ids, titres, années et auteurs.
-**Query:**
+### a) Obtenir tous les livres en 2013. On affichera les ids, titres, années et auteurs.
+**Query SQL++ :**
 ```
 SELECT META().id, titre, annee, auteur 
 FROM ouvrages 
 WHERE type = 'Livre' AND annee = 2013;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -293,19 +298,20 @@ WHERE type = 'Livre' AND annee = 2013;
     "id": "01476a9d-4c9a-41db-ad81-3db150883542",
     "titre": "A Primer on Mathematical Models in Biology."
   }
+  ...
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 493
 
-#### b) Combien y a-t-il de livres depuis 2013 (inclus) ?
-**Query:**
+### b) Combien y a-t-il de livres depuis 2013 (inclus) ?
+**Query SQL++ :**
 ```
 SELECT count(*)
 FROM ouvrages 
 WHERE type = 'Livre' AND annee >= 2013;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -313,11 +319,11 @@ WHERE type = 'Livre' AND annee >= 2013;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 781
 
-#### c) Combien y a-t-il de livres entre 2012 et 2014 (bornes incluses) ? Fournir 3 solutions différentes.
-**Query:**
+### c) Combien y a-t-il de livres entre 2012 et 2014 (bornes incluses) ? Fournir 3 solutions différentes.
+**Query SQL++ :**
 ```
 SELECT count(*)
 FROM ouvrages 
@@ -333,7 +339,7 @@ SELECT count(*)
 FROM ouvrages 
 WHERE type = 'Livre' AND annee >= 2012 AND annee <= 2014;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -341,17 +347,17 @@ WHERE type = 'Livre' AND annee >= 2012 AND annee <= 2014;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 1273
 
-#### d) Combien y a-t-il de livres en 2012 ou en 2014 ? On veillera à ce que cette valeur possède nb comme clé associée.
-**Query:**
+### d) Combien y a-t-il de livres en 2012 ou en 2014 ? On veillera à ce que cette valeur possède nb comme clé associée.
+**Query SQL++ :**
 ```
 SELECT count(*) as nb
 FROM ouvrages 
 WHERE type = 'Livre' AND (annee = 2012 OR annee = 2014);
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -359,18 +365,18 @@ WHERE type = 'Livre' AND (annee = 2012 OR annee = 2014);
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 780
 
 ### 3.
-#### a) Obtenir les différents types parmi les ouvrages, triés par ordre alphabétique ?
-**Query:**
+### a) Obtenir les différents types parmi les ouvrages, triés par ordre alphabétique ?
+**Query SQL++ :**
 ```
 SELECT distinct type
 FROM ouvrages
 ORDER BY type ASC;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -384,17 +390,17 @@ ORDER BY type ASC;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 3
 
-#### b) Idem, mais dont le résultat est un simple tableau d’entiers (et non un tableau de documents Json)
-**Query:**
+### b) Idem, mais dont le résultat est un simple tableau d’entiers (et non un tableau de documents Json)
+**Query SQL++ :**
 ```
 SELECT DISTINCT RAW type
 FROM ouvrages
 ORDER BY type ASC;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   "Article",
@@ -402,35 +408,35 @@ ORDER BY type ASC;
   "These"
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 3
 
-#### c) Combien y a-t-il d'années distinctes parmi les ouvrages ?
-**Query:**
+### c) Combien y a-t-il d'années distinctes parmi les ouvrages ?
+**Query SQL++ :**
 ```
 SELECT RAW COUNT(DISTINCT annee)
 FROM ouvrages
 ```
-**Result:**
+**Resultat :**
 ```
 [
   65
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 65
 
 
 ### 4.
-#### a) Obtenir les ouvrages dont le nombre d’auteurs est strictement supérieur à 50. On affichera les ids, titres, années et auteurs, en les triant par ordre décroissant sur le nombre d’auteurs.
-**Query:**
+### a) Obtenir les ouvrages dont le nombre d’auteurs est strictement supérieur à 50. On affichera les ids, titres, années et auteurs, en les triant par ordre décroissant sur le nombre d’auteurs.
+**Query SQL++ :**
 ```
 SELECT META().id, titre, annee, auteurs
 FROM ouvrages
 WHERE array_length(auteurs) > 50
 ORDER BY array_length(auteurs) DESC
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -624,17 +630,17 @@ ORDER BY array_length(auteurs) DESC
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 3
 
-#### b) Obtenir les ouvrages de Nikolaos Dimakis. Fournir les ids, titres, années et auteurs.
-**Query:**
+### b) Obtenir les ouvrages de Nikolaos Dimakis. Fournir les ids, titres, années et auteurs.
+**Query SQL++ :**
 ```
 SELECT META().id, titre, annee, auteurs
 FROM ouvrages
 WHERE "Nikolaos Dimakis" in auteurs
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -662,18 +668,18 @@ WHERE "Nikolaos Dimakis" in auteurs
   ...
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 6
 
-#### c) Même question en les triant par ordre décroissant sur les années puis par ordre croissant sur les titres
-**Query:**
+### c) Même question en les triant par ordre décroissant sur les années puis par ordre croissant sur les titres
+**Query SQL++ :**
 ```
 SELECT META().id, titre, annee, auteurs
 FROM ouvrages
 WHERE "Nikolaos Dimakis" in auteurs
 ORDER BY annee DESC, titre ASC;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -703,17 +709,17 @@ ORDER BY annee DESC, titre ASC;
   ...
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 6
 
-#### d) Combien y a-t-il d’ouvrages de Nikolaos Dimakis ?
-**Query:**
+### d) Combien y a-t-il d’ouvrages de Nikolaos Dimakis ?
+**Query SQL++ :**
 ```
 SELECT COUNT(*) as nb_ouvrages_de_nd
 FROM ouvrages
 WHERE "Nikolaos Dimakis" in auteurs;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -721,17 +727,17 @@ WHERE "Nikolaos Dimakis" in auteurs;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 6
 
 ### 5. Obtenir la liste de tous les ouvrages dont le titre contient le mot « ontology » ou au pluriel « ontologies » (non sensible à la casse). Fournir l’id en plus des autres attributs.
-**Query:**
+**Query SQL++ :**
 ```
 SELECT META().id, ouvrages.*
 FROM ouvrages
 WHERE REGEXP_CONTAINS(titre, ".*(?i)ontolog.*");
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -773,18 +779,18 @@ WHERE REGEXP_CONTAINS(titre, ".*(?i)ontolog.*");
   ...
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 1145
 
 ### 6.
-#### a) Combien y a-t-il d'ouvrages dont la page de fin vaut 0 ?
-**Query:**
+### a) Combien y a-t-il d'ouvrages dont la page de fin vaut 0 ?
+**Query SQL++ :**
 ```
 SELECT COUNT(*) as nb
 FROM ouvrages
 WHERE pages.fin = 0;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -792,17 +798,17 @@ WHERE pages.fin = 0;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 679
 
-#### b) Combien y a-t-il d'ouvrages dont la page de fin est plus petite que la page de début, sans considéré lorsque la page de fin vaut 0 ?
-**Query:**
+### b) Combien y a-t-il d'ouvrages dont la page de fin est plus petite que la page de début, sans considéré lorsque la page de fin vaut 0 ?
+**Query SQL++ :**
 ```
 SELECT COUNT(*) as nb
 FROM ouvrages
 WHERE pages.debut > pages.fin AND pages.fin != 0;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -810,17 +816,17 @@ WHERE pages.debut > pages.fin AND pages.fin != 0;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 39
 
-#### c) Combien y a-t-il d'ouvrages dont les pages ne sont pas renseignées ?
-**Query:**
+### c) Combien y a-t-il d'ouvrages dont les pages ne sont pas renseignées ?
+**Query SQL++ :**
 ```
 SELECT COUNT(*) as nb
 FROM ouvrages
 WHERE pages IS MISSING OR pages IS NULL;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -828,11 +834,11 @@ WHERE pages IS MISSING OR pages IS NULL;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 8045
 
-#### d) Afficher les 5 premiers ouvrages triés par titre dont l’attribut pages est renseigné mais pas la page de début. On affichera les ids, les titres, les pages.
-**Query:**
+### d) Afficher les 5 premiers ouvrages triés par titre dont l’attribut pages est renseigné mais pas la page de début. On affichera les ids, les titres, les pages.
+**Query SQL++ :**
 ```
 SELECT META().id, titre, pages
 FROM ouvrages
@@ -840,7 +846,7 @@ WHERE pages.debut IS MISSING AND pages IS NOT MISSING
 ORDER BY titre ASC
 LIMIT 5;
 ```
-**Result:**
+**Resultat :**
 ```
 [
   {
@@ -870,5 +876,5 @@ LIMIT 5;
   }
 ]
 ```
-**Documents number:**
+**Nombre de résultats :**
 > 5
